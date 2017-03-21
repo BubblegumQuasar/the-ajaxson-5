@@ -19,28 +19,34 @@ function fetchAndDisplayGif(event) {
     event.preventDefault();
     
     // get the user's input text from the DOM
-    var searchQuery = ""; // TODO should be e.g. "dance"
-
+    var searchQuery = $("#search-tag").val(); // DONE should be e.g. "dance"
+    var searchTags = ("jackson 5 " + searchQuery);
     // configure a few parameters to attach to our request
     var params = { 
         api_key: "dc6zaTOxFJmzC", 
-        tag : "" // TODO should be e.g. "jackson 5 dance"
+        tag : searchTags // DONE should be e.g. "jackson 5 dance"
     };
     
     // make an ajax request for a random GIF
     $.ajax({
-        url: "", // TODO where should this request be sent?
+        url: "http://api.giphy.com/v1/gifs/random", // DONE where should this request be sent?
         data: params, // attach those extra parameters onto the request
         success: function(response) {
             // if the response comes back successfully, the code in here will execute.
-            
+
             // jQuery passes us the `response` variable, a regular javascript object created from the JSON the server gave us
             console.log("we received a response!");
             console.log(response);
+            console.log(searchTags);
             
-            // TODO
+            var imgUrl = response.data.image_url;
+
+            // DONE
             // 1. set the source attribute of our image to the image_url of the GIF
+            $("#gif").attr("src", imgUrl);
             // 2. hide the feedback message and display the image
+            $("#gif").show();
+            $("#feedback").hide();
         },
         error: function() {
             // if something went wrong, the code in here will execute instead of the success function
@@ -51,8 +57,11 @@ function fetchAndDisplayGif(event) {
         }
     });
     
-    // TODO
+    // DONE
     // give the user a "Loading..." message while they wait
+    
+    $("#feedback").show();
+    $("#feedback").text("Loading...");
     
 }
 
