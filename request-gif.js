@@ -40,13 +40,19 @@ function fetchAndDisplayGif(event) {
             console.log(searchTags);
             
             var imgUrl = response.data.image_url;
-
+            var notRobot = $("#not-robot").val();
+            if (notRobot == 5){
             // DONE
             // 1. set the source attribute of our image to the image_url of the GIF
             $("#gif").attr("src", imgUrl);
             // 2. hide the feedback message and display the image
             $("#gif").show();
             $("#feedback").hide();
+            $("#nope").hide();
+            } else {
+               $("#nope").show();
+               $("#feedback").hide(); 
+            }
         },
         error: function() {
             // if something went wrong, the code in here will execute instead of the success function

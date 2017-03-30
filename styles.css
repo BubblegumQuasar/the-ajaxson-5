@@ -1,0 +1,35 @@
+#nope{
+    color: red;
+    font-weight: bold;
+    margin-left: 20px;
+}
+.box-test {
+    border: 2px solid cornflowerblue;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #ffccff;
+    margin: 20px;
+    padding: 6px;
+}
+.container-fluid{
+    text-align: center;
+}
+.multi-pad{
+    padding: 10px;
+
+}
+.img{
+    margin: auto;
+}
+.container-fluid{
+    background-color: #99ffcc;
+}
+#not-robot{
+    text-align: right;
+}
+#search-tag{
+    text-align: right;
+}
+.button-attr{
+    margin-left:20px;
+}
