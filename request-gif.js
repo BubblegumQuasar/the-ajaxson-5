@@ -55,6 +55,8 @@ function fetchAndDisplayGif(event) {
                $("#nope").show();
                $("#feedback").hide();
                $("#gif").hide(); 
+               $("#not-robot").val('');
+               $("#search-tag").val('');
             }
         },
         error: function() {
