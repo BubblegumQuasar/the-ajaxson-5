@@ -50,6 +50,7 @@ function fetchAndDisplayGif(event) {
             $("#feedback").hide();
             $("#nope").hide();
             $("#not-robot").val('');
+            $('#search-tag').val('');
             } else {
                $("#nope").show();
                $("#feedback").hide();
