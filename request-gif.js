@@ -49,6 +49,7 @@ function fetchAndDisplayGif(event) {
             $("#gif").show();
             $("#feedback").hide();
             $("#nope").hide();
+            $("#not-robot").val('');
             } else {
                $("#nope").show();
                $("#feedback").hide(); 
