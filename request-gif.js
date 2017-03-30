@@ -52,7 +52,8 @@ function fetchAndDisplayGif(event) {
             $("#not-robot").val('');
             } else {
                $("#nope").show();
-               $("#feedback").hide(); 
+               $("#feedback").hide();
+               $("#gif").hide(); 
             }
         },
         error: function() {
